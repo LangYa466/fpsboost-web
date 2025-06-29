@@ -1,0 +1,409 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FeatureIcon from '../components/FeatureIcon.jsx';
+
+// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
+// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+---
+
+<Layout>
+	<!-- 导航栏 -->
+	<nav class="fixed top-0 w-full glass border-b border-white/10 z-50 backdrop-blur-sm transition-opacity duration-300 opacity-70 hover:opacity-100">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="flex justify-between items-center h-16">
+				<div class="flex items-center">
+					<div class="flex-shrink-0">
+						<h1 class="text-2xl font-display font-bold transition-all duration-300 hover:scale-105 cursor-pointer">
+							<span class="text-white hover:text-primary-300 transition-colors">FPS</span><span class="text-primary-400 hover:text-primary-300 transition-colors">Boost</span>
+						</h1>
+					</div>
+				</div>
+				<div class="hidden md:block">
+					<div class="ml-10 flex items-baseline space-x-4">
+						<a href="#features" class="text-dark-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">功能</a>
+						<a href="#download" class="text-dark-300 hover:text-primary-400 px-3 py-2 rounded-md text-sm font-medium transition-colors">下载</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- 英雄区域 -->
+	<section class="relative pt-24 pb-16 overflow-hidden">
+		<!-- 动态背景 -->
+		<div class="absolute inset-0 gradient-bg opacity-20"></div>
+		<div class="absolute inset-0 bg-dark-900"></div>
+		
+		<!-- 装饰性元素 -->
+		<div class="absolute top-20 left-10 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl animate-float"></div>
+		<div class="absolute bottom-20 right-10 w-96 h-96 bg-primary-400/10 rounded-full blur-3xl animate-float" style="animation-delay: -3s;"></div>
+		
+		<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center relative">
+				<h1 class="text-6xl md:text-8xl font-display font-bold mb-6 drop-shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 cursor-pointer relative z-10 select-none" data-text="FPSBoost" id="fpsboost-title" onclick="handleTitleClick()">
+					<span class="text-white hover:text-primary-300 transition-colors duration-300">FPS</span><span class="text-primary-400 hover:text-primary-300 transition-colors duration-300">Boost</span>
+				</h1>
+				<p class="text-xl md:text-2xl text-dark-300 mb-8 max-w-3xl mx-auto font-light">
+					基于MCP919编写的Minecraft 1.8.9客户端<br>
+					内置丰富功能，开源免费，提升您的游戏体验
+				</p>
+				<div class="flex flex-col sm:flex-row gap-4 justify-center">
+					<a href="#download" class="group bg-primary-600 hover:bg-white/10 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+						<span class="flex items-center justify-center">
+							立即下载
+							<FeatureIcon icon="ph:arrow-right" className="text-lg ml-2 mb-0 group-hover:translate-x-1 transition-transform" />
+						</span>
+					</a>
+					<a href="https://github.com/LangYa466/FPSBoostClient-V2" target="_blank" class="glass hover:bg-white/10 text-white px-8 py-4 rounded-xl text-lg font-semibold transition-all duration-300 transform hover:scale-105">
+						查看源码
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 功能特色 -->
+	<section id="features" class="py-20 bg-dark-800/50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-5xl font-display font-bold text-white mb-4">强大功能</h2>
+				<p class="text-xl text-dark-300 font-light">内置40+实用功能，无需额外模组</p>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<!-- 界面优化 -->
+				<div class="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
+					<FeatureIcon icon="ph:paint-brush-duotone" />
+					<h3 class="text-xl font-semibold text-white mb-4">界面优化</h3>
+					<ul class="text-dark-300 space-y-3 text-sm">
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							ClickGUI - 可自定义的点击界面
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							平滑GUI缩放
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							更好的聊天界面
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							更好的物品栏
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							自定义准星
+						</li>
+					</ul>
+				</div>
+
+				<!-- 视觉效果 -->
+				<div class="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
+					<FeatureIcon icon="ph:sparkle-duotone" />
+					<h3 class="text-xl font-semibold text-white mb-4">视觉效果</h3>
+					<ul class="text-dark-300 space-y-3 text-sm">
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							动作模糊效果
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							攻击特效
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							更多粒子效果
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							龙翼装饰
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							3D皮肤层
+						</li>
+					</ul>
+				</div>
+
+				<!-- 游戏优化 -->
+				<div class="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
+					<FeatureIcon icon="ph:lightning-duotone" />
+					<h3 class="text-xl font-semibold text-white mb-4">游戏优化</h3>
+					<ul class="text-dark-300 space-y-3 text-sm">
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							自动疾跑
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							无伤害相机抖动
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							无攻击延迟
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							更好的命中检测
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							自定义世界时间
+						</li>
+					</ul>
+				</div>
+
+				<!-- 实用工具 -->
+				<div class="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
+					<FeatureIcon icon="ph:wrench-duotone" />
+					<h3 class="text-xl font-semibold text-white mb-4">实用工具</h3>
+					<ul class="text-dark-300 space-y-3 text-sm">
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							名称保护
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							聊天复制
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							音乐播放器
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							点击音效
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							全亮模式
+						</li>
+					</ul>
+				</div>
+
+				<!-- 渲染增强 -->
+				<div class="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
+					<FeatureIcon icon="ph:target-duotone" />
+					<h3 class="text-xl font-semibold text-white mb-4">渲染增强</h3>
+					<ul class="text-dark-300 space-y-3 text-sm">
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							方块轮廓
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							目标圆圈
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							更好的附魔显示
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							更好的名称标签
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							自定义命中框
+						</li>
+					</ul>
+				</div>
+
+				<!-- 个性化 -->
+				<div class="glass rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 transform hover:scale-105 group">
+					<FeatureIcon icon="ph:mask-happy-duotone" />
+					<h3 class="text-xl font-semibold text-white mb-4">个性化</h3>
+					<ul class="text-dark-300 space-y-3 text-sm">
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							自定义模型
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							物品物理效果
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							旧版动画
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							最小化摆动
+						</li>
+						<li class="flex items-center">
+							<span class="w-2 h-2 bg-primary-400 rounded-full mr-3"></span>
+							透视模式
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 下载区域 -->
+	<section id="download" class="py-20 bg-dark-900">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center mb-16">
+				<h2 class="text-5xl font-display font-bold text-white mb-4">立即下载</h2>
+				<p class="text-xl text-dark-300 font-light">开源 免费</p>
+			</div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+				<!-- QQ群下载 -->
+				<div class="glass rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+					<FeatureIcon icon="ph:users-duotone" className="text-4xl" />
+					<h3 class="text-2xl font-semibold text-white mb-2">QQ群下载</h3>
+					<p class="text-dark-300 mb-6">加入QQ群，有什么问题可以直接问</p>
+					<a href="https://qm.qq.com/q/65SscyE5jO" target="_blank" class="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 inline-block transform hover:scale-105">
+						加入QQ群
+					</a>
+				</div>
+				
+				<!-- GitHub下载 -->
+				<div class="glass rounded-2xl p-8 text-center hover:bg-white/10 transition-all duration-300 transform hover:scale-105">
+					<FeatureIcon icon="ph:github-logo-duotone" className="text-4xl" />
+					<h3 class="text-2xl font-semibold text-white mb-4">支持作者</h3>
+					<p class="text-dark-300 mb-6">如果FPSBoost对您有帮助，请考虑支持作者</p>
+					<a href="https://afdian.com/a/langya466" target="_blank" class="bg-white-600 hover:bg-white-700 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 inline-block transform hover:scale-105">
+						爱发电支持
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 作者信息 -->
+	<section class="py-20 bg-dark-800/50">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center">
+				<h2 class="text-5xl font-display font-bold text-white mb-8">关于作者</h2>
+				<div class="glass rounded-2xl p-8 max-w-2xl mx-auto">
+					<FeatureIcon icon="ph:user-duotone" className="text-4xl" />
+					<h3 class="text-2xl font-semibold text-white mb-4">LangYa466</h3>
+					<p class="text-dark-300 mb-6">幼稚的初中生</p>
+					<div class="flex flex-col sm:flex-row gap-4 justify-center">
+						<a href="https://furry.luxe/" target="_blank" class="bg-dark-600 hover:bg-dark-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+							个人主页
+						</a>
+						<a href="https://github.com/LangYa466" target="_blank" class="bg-dark-600 hover:bg-dark-500 text-white px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+							我的GitHub
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- 页脚 -->
+	<footer class="bg-dark-900 border-t border-white/10 py-8">
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+			<div class="text-center">
+				<p class="text-dark-400">
+					© 2024-2025 FPSBoostTeam 保留所有权利
+				</p>
+				<p class="text-dark-500 text-sm mt-2">
+					友情链接: 
+					<a href="https://fpsmaster.top" target="_blank" class="text-primary-400 hover:text-primary-300 transition-colors duration-300 hover:underline decoration-primary-300 underline-offset-4">FPSMaster</a> | 
+					<a href="https://beta.skidonion.tech/" target="_blank" class="text-primary-400 hover:text-primary-300 transition-colors duration-300 hover:underline decoration-primary-300 underline-offset-4">打滑洋葱</a>
+				</p>
+				<p class="text-dark-500 text-xs mt-4">
+					致谢框架: 
+					<a href="https://astro.build" target="_blank" class="text-primary-400 hover:text-primary-300 transition-colors duration-300 hover:underline decoration-primary-300 underline-offset-4">Astro</a> | 
+					<a href="https://tailwindcss.com" target="_blank" class="text-primary-400 hover:text-primary-300 transition-colors duration-300 hover:underline decoration-primary-300 underline-offset-4">Tailwind CSS</a> | 
+					<a href="https://iconify.design" target="_blank" class="text-primary-400 hover:text-primary-300 transition-colors duration-300 hover:underline decoration-primary-300 underline-offset-4">Iconify</a> | 
+					<a href="https://react.dev" target="_blank" class="text-primary-400 hover:text-primary-300 transition-colors duration-300 hover:underline decoration-primary-300 underline-offset-4">React</a>
+				</p>
+			</div>
+		</div>
+	</footer>
+
+	<script is:inline>
+		let clickCount = 0;
+		let clickTimer = null;
+		const CLICK_TIMEOUT = 5000; 
+		const REQUIRED_CLICKS = 3;
+
+		function handleTitleClick() {
+			clickCount++;
+			
+			if (clickTimer) {
+				clearTimeout(clickTimer);
+			}
+			
+			clickTimer = setTimeout(() => {
+				if (clickCount < REQUIRED_CLICKS) {
+					clickCount = 0;
+				}
+			}, CLICK_TIMEOUT);
+			
+			if (clickCount >= REQUIRED_CLICKS) {
+				clickCount = 0;
+				if (clickTimer) {
+					clearTimeout(clickTimer);
+				}
+				
+				window.open('https://www.bilibili.com/video/BV12SoeYdEH8/', '_blank');
+			} else {
+				window.scrollTo({top: 0, behavior: 'smooth'});
+			}
+		}
+
+		function initSmoothScroll() {
+			const allAnchorLinks = document.querySelectorAll('a[href^="#"]');
+			
+			allAnchorLinks.forEach(function(link) {
+				link.addEventListener('click', function(e) {
+					const targetId = this.getAttribute('href');
+					if (!targetId) return;
+					
+					const targetElement = document.querySelector(targetId);
+					const navElement = document.querySelector('nav');
+					
+					if (targetElement && navElement) {
+						e.preventDefault();
+						
+						const navHeight = navElement.offsetHeight;
+						const targetPosition = targetElement.offsetTop - navHeight;
+						
+						window.scrollTo({
+							top: targetPosition,
+							behavior: 'smooth'
+						});
+					}
+				});
+			});
+		}
+
+		function initHoverEffects() {
+			const buttons = document.querySelectorAll('a, button');
+			buttons.forEach(function(button) {
+				button.addEventListener('mouseenter', function() {
+					this.style.transform = 'scale(1.05)';
+				});
+				
+				button.addEventListener('mouseleave', function() {
+					this.style.transform = 'scale(1)';
+				});
+			});
+		}
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', function() {
+				initSmoothScroll();
+				initHoverEffects();
+			});
+		} else {
+			initSmoothScroll();
+			initHoverEffects();
+		}
+
+		window.addEventListener('load', function() {
+			setTimeout(function() {
+				initSmoothScroll();
+				initHoverEffects();
+			}, 100);
+		});
+	</script>
+</Layout>
